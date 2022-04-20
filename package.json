@@ -1,5 +1,5 @@
 {
-  "name": "vue-project",
+  "name": "command-palette-tailwindcss",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
