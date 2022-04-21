@@ -18,13 +18,11 @@ const store = useCityStore()
 const keyBoardHandler = event => {
   if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
     store.isShow = !store.isShow
+  } else if (event.key === 'Escape') {
+    store.isShow = false
   }
 }
 
-onMounted(() => {
-  window.addEventListener('keyup', keyBoardHandler)
-})
-onUnmounted(() => {
-  window.removeEventListener('keyup', keyBoardHandler)
-})
+onMounted(() => { window.addEventListener('keyup', keyBoardHandler) })
+onUnmounted(() => { window.removeEventListener('keyup', keyBoardHandler) })
 </script>

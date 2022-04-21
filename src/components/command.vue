@@ -7,7 +7,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </span>
-        <input v-model="store.search" class="w-full bg-transparent outline-none h-12" placeholder="search..." type="search">
+        <input v-model="store.search" @keypress.stop.prevent.enter="selectToGo" class="w-full bg-transparent outline-none h-12" placeholder="search..." type="search">
       </div>
       <ul class=" max-h-64 overflow-y-auto">
         <li v-if="store.search && store.filterAllCity.length === 0" class=" px-2 py-4 text-gray-400">..沒有城市</li>
@@ -50,11 +50,19 @@ export default {
       store.isShow = false
     }
 
+    const selectToGo = () => {
+      if (store.filterAllCity.length > 0) {
+        const city = store.filterAllCity[activeNumber.value]
+        goToPage(city)
+      }
+    }
+
     return {
       isOpen,
       store,
       activeNumber,
-      goToPage
+      goToPage,
+      selectToGo
     }
   }
 }
