@@ -1,5 +1,5 @@
 <template>
-  <main class="h-screen text-center text-gray-800 w-11/12 mx-auto max-w-2xl">
+  <main class="pb-10 text-center text-gray-800 w-11/12 mx-auto max-w-2xl">
     <h1 class=" py-10 text-2xl font-bold">Welcome this project!!</h1>
     <h2 class="font-bold text-xl">台灣縣市搜尋器</h2>
     <section class=" bg-gray-200 my-5 p-4 rounded">
